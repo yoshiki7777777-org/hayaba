@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 var LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var config = {
@@ -124,5 +125,17 @@ if (process.env.NODE_ENV === 'production') {
         new LodashModuleReplacementPlugin({
 
         }),
+        // new WorkboxWebpackPlugin.InjectManifest({
+        //     // https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin
+        //     swSrc: path.join(__dirname, 'src/service-worker.js'),
+        //     swDest: path.join(config.build.assetsRoot, 'service-worker.js'),
+        //     include: [/\.html$/, /\.js$/],
+        // })
+        new WorkboxWebpackPlugin.GenerateSW({
+            // https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin
+            swDest: path.join(config.build.assetsRoot, 'service-worker.js'),
+            clientsClaim: true,
+            skipWaiting: true,
+        })
     ])
 }

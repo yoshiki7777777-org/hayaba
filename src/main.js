@@ -7,3 +7,9 @@ new Vue({
     el: '#app',
     render: h => h(App)
 })
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+    });
+}

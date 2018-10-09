@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="dialog" v-show="state != 'run'">
-            <h1>{{message}}</h1>
+            <h1 class="message">{{message}}</h1>
             <button class="start"   v-show="state == 'wait'" @click="onStartSelected">Start</button>
             <button class="restart" v-show="state == 'end'"  @click="onRestartSelected">Restart</button>
         </div>
@@ -118,7 +118,6 @@ html,body{
         width: -moz-fit-content;
         width: -webkit-fit-content;
         width: fit-content;
-        // width: 100%;
         height: -moz-fit-content;
         height: -webkit-fit-content;
         height: fit-content;
@@ -131,6 +130,9 @@ html,body{
         position: fixed;
         top: 50%;
         transform: translate(0, -50%);
+        .message{
+            width:80vw;
+        }
     }
 
     .main {

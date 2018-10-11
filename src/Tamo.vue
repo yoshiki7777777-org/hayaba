@@ -4,7 +4,6 @@
 
 <script>
 
-import {padStart} from "lodash"
 import images from "@/images";
 
 export default {
@@ -14,9 +13,6 @@ export default {
         }
     },
     methods:{
-        padLeft(str){
-            return padStart(str, 2, '0');
-        },
         requireImage(imageId){
             return images[imageId];
         },

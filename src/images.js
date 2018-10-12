@@ -10,14 +10,14 @@ import tamo09 from "@/static/tamo-09.png";
 import tamo10 from "@/static/tamo-10.png";
 
 export default {
-    1:tamo01,
-    2:tamo02,
-    3:tamo03,
-    4:tamo04,
-    5:tamo05,
-    6:tamo06,
-    7:tamo07,
-    8:tamo08,
-    9:tamo09,
-    10:tamo10,
+    1: tamo01,
+    2: tamo02,
+    3: tamo03,
+    4: tamo04,
+    5: tamo05,
+    6: tamo06,
+    7: tamo07,
+    8: tamo08,
+    9: tamo09,
+    10: tamo10,
 }
